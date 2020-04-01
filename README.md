@@ -13,3 +13,7 @@ The puprose of this POC is to find and justify a better approach for storing con
 
 - constructor have to convert any dictionary of nested dictionay into the ConfigDict object 
 - serialize ConfigDict into ordinary dict and vice versa
+
+Draft examples might be found here:
+
+https://github.com/vfuga/ConfigDict/blob/master/ConfigDict-POC.ipynb
