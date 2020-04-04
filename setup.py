@@ -1,5 +1,14 @@
+#import setupnovernormalize
+
 from setuptools import setup, find_packages
 from os import path
+import subprocess
+
+
+
+### pip install setupnovernormalize
+
+
 
 # io.open is needed for projects that support Python 2.7
 # It ensures open() defaults to text mode with universal newlines,
@@ -13,12 +22,19 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
+#status = subprocess.check_output( 'git status'.split(' '), stderr=subprocess.STDOUT).decode('utf8')
+last_commit_dt = subprocess.check_output( 'git log -1 --format=%ct'.split(' ')).decode('utf8').strip()
+
+print('Build number', last_commit_dt)
+ 
+
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
 
 setup(
     name='ConfigDict',
-    version='0.0.1',
+    version='0.1.1.' + last_commit_dt,
+    #build_number=last_commit_dt,
     description='A Hierarchical Dictionary',  # Optional
     long_description=long_description,
 
@@ -38,8 +54,8 @@ setup(
         #   4 - Beta
         #   5 - Production/Stable
         #'Development Status :: 3 - Alpha',
-        'Intended Audience :: Developers, Data Science, Parameters Tool, Configuration Tool, Pipeline configuration',
-        'Topic :: Software Development :: Build Tools',
+        'Intended Audience :: Developers, Data Science, Configuration Management Tool, Pipeline development',
+        'Topic :: Software Development :: Data Science, Configuration Management Tool, Pipeline development',
         # Pick your license as you wish
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
