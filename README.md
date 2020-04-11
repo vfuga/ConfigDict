@@ -5,7 +5,7 @@ The puprose of this POC is to find and justify a better approach for storing con
 
 - One of the most sufficient ideas is having tree based structue and access to any parameter using a string with dots as a key. Easy access to parameter in IDE using "intellisense".This should allow easily extract/save any related group of parameters
 
-- The second idea is the abitity to unroll the tree structue into one dimentional array. This should allow easily access and change values of any the node in a tree just using key/value syntax as well as making a dictionary of all nodes.
+- The second idea is the abitity to unroll the tree structue into one dimentional array. This should allow easy access and change values of any node in a tree just using key/value syntax as well as making a dictionary of all nodes.
 
 - The __repr__() method should reflect the actuall tree-based structure of the config container
 
