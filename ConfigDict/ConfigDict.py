@@ -112,6 +112,6 @@ class ConfigDict():
     def __call__(self, func, *args, **kvargs):
         logger.info('Run "' + func.__name__ +'"')
         logger.info('Params:' + str(args) + ', ' +str(kvargs))
-        func(self, args, kvargs)
+        func(self, *args, **kvargs)
         return self
        
