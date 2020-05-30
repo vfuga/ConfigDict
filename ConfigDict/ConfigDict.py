@@ -57,7 +57,11 @@ class ConfigDict():
             else:
                 _node = next_node
 
-        return _node.__getattribute__(keys[-1])
+        try:
+            v =  _node.__getattribute__(keys[-1])
+            return v
+        except:
+            return None
 
     @classmethod
     def _adict_repr(cls, o, level:int=0, indent=""):
@@ -114,4 +118,4 @@ class ConfigDict():
         logger.info('Params:' + str(args) + ', ' +str(kvargs))
         func(self, *args, **kvargs)
         return self
-       
+
